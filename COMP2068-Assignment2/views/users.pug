@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first
+
+  else
+      main
+          if(cat && cat.length)
+            table
+                thead
+                    th Id
+                    th Users
+                tbody
+                    each ca in cat
+                        tr
+                            td= ca._id
+                            td= ca.username
+          else
+            h1 No Users
+    
+  block content
+  include partials/footer
+    

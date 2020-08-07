@@ -1,0 +1,22 @@
+extends layout
+block content
+  if(!user)
+    h1 Please Login first
+  else
+      section
+        #login
+          h3 Insert Items 
+          form(method='POST' action='/insert' enctype='multipart/form-data')
+            div
+                h5 Name
+                input(type='text' name='name')
+            div
+                h5 catagory
+                input(type='text' name='catagory')
+            div
+                h5 Size
+                input(type='text' name='size')
+            div
+                button(type='submit' value='Submit') Submit
+  block content
+  include  partials/footer

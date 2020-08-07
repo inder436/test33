@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first
+  
+  else
+      section
+        #login
+          h1 Update
+          form(method='POST' action='/update')
+            div
+                h5 Update Name
+                input(type='text' name='name' value=items.name)
+            div
+                h5 Update Catagory
+                input(type='text' name='catagory' value=items.catagory)
+            div
+                h5 Update Size
+                input(type='text' name='size' value=items.size)
+            div
+                input(type='hidden' name='id' value=items.id)
+                button(type='submit' value='Submit') Submit
+  block content
+  include partials/footer

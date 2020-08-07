@@ -1,0 +1,31 @@
+extends layout
+block content
+  if(!user)
+    h1 Please Login first!
+  else
+      main
+          if(items && items.length)
+            table.table
+                thead
+                    th Name
+                    th Catagory
+                    th Size
+                    th Update
+                    th Delete
+                tbody
+                    each emp in items
+                        tr
+                            td= emp.name
+                            td= emp.catagory
+                            td= emp.size
+                            td 
+                                a(href='/update/'+emp.id) Update
+                            td
+                                form.deleteForm(id=emp.id)
+                                    button(type='submit') Delete
+          else
+            h1 No Items!
+          script(src='/javascripts/delete.js')    
+  block content
+  include partials/footer
+    

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body
+    nav.navbar
+        a.navbar-brand(href='/') Prabhat's assignment2
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+            span.navbar-toggler-icon
+        #collapsibleNavbar.collapse
+            ul.navbar-nav
+                if (!user)
+                  li.nav-item
+                    a.nav-link(href='/login') Login
+                  li.nav-item
+                    a.nav-link(href='/register') register
+                else
+                  li.nav-item
+                    a.nav-link(href='/items') Records
+                  li.nav-item
+                    a.nav-link(href='/insert') Insert
+                  li.nav-item
+                    a.nav-link(href='/logout') Logout
+    block content

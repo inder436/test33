@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  section
+    #login
+      h3 Login 
+      form(method='POST' action='/login')
+        fieldset
+            label(for='username') Username &nbsp;
+            input#username(type='text' name='username')
+        fieldset
+            label(for='password') Password &nbsp;
+            input#password(type='password' name='password')
+        input(type='submit' value='Login')
+  block content
+  include partials/footer

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  section
+    #register
+      h3 Register 
+      form(method='POST' action='/register')
+        fieldset
+            label(for='username') Username &nbsp;
+            input#username(type='text' name='username')
+        fieldset
+            label(for='password') Password &nbsp;
+            input#password(type='password' name='password')
+        input(type='submit' value='Register')
+  block content
+  include partials/footer
